@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-js-014502a6b9a064931805.js","mappings":"+JAEe,SAASA,IACtB,OAAO","sources":["webpack://honami/./src/pages/404.js"],"sourcesContent":["import React from \"react\";\n\nexport default function Page404() {\n  return <h1>404</h1>;\n}\n"],"names":["Page404"],"sourceRoot":""}
