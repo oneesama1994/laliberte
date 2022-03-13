@@ -215,7 +215,8 @@ export const pageQuery = graphql`
       sort: { fields: relativePath }
       filter: {
         relativeDirectory: { eq: $name }
-        extension: { nin: ["pbew", "json"] }
+        extension: { nin: ["json"] }
+        name: { regex: "/^(?!thumbnail).*/" }
       }
     ) {
       edges {

@@ -6,6 +6,7 @@
   "author": "imouto1994 <nhan.bui@foodpanda.com>",
   "license": "MIT",
   "scripts": {
+    "compress": "node ./scripts/compress.js",
     "prebuild": "node ./scripts/prebuild.js",
     "postinstall": "sh setup.sh",
     "develop": "gatsby develop",

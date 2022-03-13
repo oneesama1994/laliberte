@@ -42,7 +42,7 @@ async function getDirectories(parentPath) {
       await fsPromises.unlink(trackedFilePath);
     }
 
-    const filePaths = await searchFiles(`content/${dir}/*.{png,jpg,jpeg}`);
+    const filePaths = await searchFiles(`content/${dir}/*.{png,jpg,jpeg,webp}`);
     if (filePaths.length === 0) {
       continue;
     }
@@ -71,6 +71,9 @@ async function getDirectories(parentPath) {
     const dimensionsList = [];
     for (let i = 0; i < filePaths.length; i++) {
       const filePath = filePaths[i];
+      if (filePath.endsWith("thumbnail.webp")) {
+        continue;
+      }
       const { width, height } = sizeOf(filePath);
       const cipher = crypto.createCipheriv("aes-256-cbc", KEY, IV);
       const input = fs.createReadStream(filePath);
